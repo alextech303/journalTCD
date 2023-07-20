@@ -3,23 +3,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="utf-8">
 <title>Insert title here</title>
 </head>
 <body background="images/bg.bmp" text="blue">
 
 <br/>
 <form action="frontController" method="post">
-<input type="hidden" name="command" value = "forward"/> 
-<h2>Введите имя:</h2>
-<input type="text" name="login" value=""/>
+<h1><legend>Вход пользователя</legend></h1>
+<input type="hidden" name="command" value = "forward" /> 
+
+<input type="text" name="login" value="" placeholder="Имя пользователя"/>
 <br/>
 <br/>
-<h2>Введите пароль:</h2>
-<input type="password" name="password" value=""/><br/>
+<input type="password" name="password" value="" placeholder="Пароль пользователя" /><br/>
 <br/>
 <br/>
 <button type="submit"> <img src="images/login.png" width="20px" height="20px">Войти в учетную запись  </button>
+
 </form>
 
 

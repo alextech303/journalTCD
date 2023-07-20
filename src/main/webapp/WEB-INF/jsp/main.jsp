@@ -7,11 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body bgcolor="yellow">
-<h1>Контроль качества готовой продукции ООО "Завод тканых и сварных сеток"</h1>
+<h1>Журнал контроля качества готовой продукции ООО "Завод тканых и сварных сеток"</h1>
 </br>
 </br>
-<form action ="3306.jsp" method="get">
-<button type="submit"> Сетка рифленая ГОСТ 3306-88    </button> 
+<form action ="23279.jsp" method="get">
+<button type="submit"> Сетка сварная ГОСТ 23279-2012    </button> 
 </form>
 </br>
 </br>
