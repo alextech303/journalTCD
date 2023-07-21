@@ -9,7 +9,8 @@
 
 <body background="images/journal3.jpg">
 <h1 align="center" color="green">Сетка сварная ГОСТ 23279-2012</h1>
-<form name="select" action="frontController"  method="post" target="_blank">
+
+<form name="select" action="writeController"  method="post" target="_blank">
 <table width="1080px" border="1" align="center" cellspacing="0" >
 <tr>
 <td>Наименование сетки</td>

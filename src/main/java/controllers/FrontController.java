@@ -1,10 +1,8 @@
 package controllers;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
-import com.oracle.wls.shaded.org.apache.xpath.operations.Equals;
-
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -18,19 +16,27 @@ public class FrontController extends HttpServlet{
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	private final CommandProvider provider = new CommandProvider();
+	
 public FrontController() {
 	super();
 }
 
-protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
-	processRequest(request,response);
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+	try {
+		processRequest(request, response);
+	} catch (NoSuchAlgorithmException | InvalidKeySpecException | IOException | ServletException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
 }
 
 protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
-	processRequest(request,response);
+	loginRequest(request,response);
 }
 
-private void processRequest(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException{
+private void loginRequest(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException{
 	response.setContentType("text/html");
 	String login = request.getParameter("login");
 	String password = request.getParameter("password");
@@ -46,4 +52,19 @@ private void processRequest(HttpServletRequest request,HttpServletResponse respo
 	
 			
 }
+
+
+private void processRequest(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException, NoSuchAlgorithmException, InvalidKeySpecException{
+	String commandName = request.getParameter("command");
+
+	Command command = provider.getCommand(commandName);
+	try {
+		command.execute(request, response);
+	} catch (ServletException | IOException	 | NoSuchAlgorithmException | InvalidKeySpecException e ) {
+		e.printStackTrace();
+		response.sendRedirect("controller?command=go_to_error_page");
+	}
+
+}
+
 }
