@@ -5,46 +5,58 @@ import java.util.Objects;
 
 public class Write {
 	
-	private String name;
-	private double size_cell_1;
-	private double size_cell_2;
-	private double diameter;
-	private LocalDate date;
+	private String name="";
+	private String size_cell_1;
+	private String size_cell_2;
+	private String diameter;
+	private String date;
 	
-	
-	
-	public Write() {
+	public Write(String name, String size_cell_1, String size_cell_2, String diameter, String date) {
 		super();
+		this.name = name;
+		this.size_cell_1 = size_cell_1;
+		this.size_cell_2 = size_cell_2;
+		this.diameter = diameter;
+		this.date = date;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	public double getSize_cell_1() {
+
+	public String getSize_cell_1() {
 		return size_cell_1;
 	}
-	public void setSize_cell_1(double size_cell_1) {
+
+	public void setSize_cell_1(String size_cell_1) {
 		this.size_cell_1 = size_cell_1;
 	}
-	public double getSize_cell_2() {
+
+	public String getSize_cell_2() {
 		return size_cell_2;
 	}
-	public void setSize_cell_2(double size_cell_2) {
+
+	public void setSize_cell_2(String size_cell_2) {
 		this.size_cell_2 = size_cell_2;
 	}
-	public double getDiameter() {
+
+	public String getDiameter() {
 		return diameter;
 	}
-	public void setDiameter(double diameter) {
+
+	public void setDiameter(String diameter) {
 		this.diameter = diameter;
 	}
-	public LocalDate getDate() {
+
+	public String getDate() {
 		return date;
 	}
-	public void setDate(LocalDate date) {
+
+	public void setDate(String date) {
 		this.date = date;
 	}
 
@@ -62,11 +74,9 @@ public class Write {
 		if (getClass() != obj.getClass())
 			return false;
 		Write other = (Write) obj;
-		return Objects.equals(date, other.date)
-				&& Double.doubleToLongBits(diameter) == Double.doubleToLongBits(other.diameter)
-				&& Objects.equals(name, other.name)
-				&& Double.doubleToLongBits(size_cell_1) == Double.doubleToLongBits(other.size_cell_1)
-				&& Double.doubleToLongBits(size_cell_2) == Double.doubleToLongBits(other.size_cell_2);
+		return Objects.equals(date, other.date) && Objects.equals(diameter, other.diameter)
+				&& Objects.equals(name, other.name) && Objects.equals(size_cell_1, other.size_cell_1)
+				&& Objects.equals(size_cell_2, other.size_cell_2);
 	}
 
 	@Override
@@ -74,6 +84,8 @@ public class Write {
 		return "Write [name=" + name + ", size_cell_1=" + size_cell_1 + ", size_cell_2=" + size_cell_2 + ", diameter="
 				+ diameter + ", date=" + date + "]";
 	}
+	
+	
 	
 	
 	

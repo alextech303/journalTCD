@@ -26,20 +26,20 @@ public class WriteDaoImpl implements IWriteDao{
 	public boolean addWrite(Write write) throws SQLException {
 		boolean addWrite = true;
 		try (Connection connect = ConnectionPool.getInstance().takeConnection()) {
-
-			String sql = "INSERT INTO 23279_2012(name,size_cell_1,size_cell_2,diameteruser) VALUES(?,?,?,?)";
+System.out.println("class WriteDaoImpl.addWrite");
+			String sql = "INSERT INTO 23279_2012(name,size_cell_1,size_cell_2,diameter,date) VALUES(?,?,?,?,?)";
 			PreparedStatement ps = connect.prepareStatement(sql);
 
 			ps.setString(1, write.getName());
-			ps.setDouble(2, write.getSize_cell_1());
-			ps.setDouble(3, write.getSize_cell_2());
-			ps.setDouble(4, write.getDiameter());
-		//	ps.setDa
+			ps.setString(2, write.getSize_cell_1());
+			ps.setString(3, write.getSize_cell_2());
+			ps.setString(4, write.getDiameter());
+			ps.setString(5, write.getDate());
 			
 			ps.executeUpdate();
 
 		} catch (ConnectionPoolException e) {
-		
+			addWrite = false;
 			e.printStackTrace();
 
 		}

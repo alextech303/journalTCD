@@ -1,16 +1,24 @@
-<%@page import="java.time.LocalDate"%>
+	<%@page import="java.time.LocalDate"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Сетка сварная ГОСТ 23279-2012</title>
+<!-- <link rel="stylesheet" type="text/css" href="styles/23279_Style.css">
+<style>
+body {
+
+}
 
 
-<body background="images/journal3.jpg">
+</style> -->
+<body background="images/fon.jpg">
+<div >
 <h1 align="center" color="green">Сетка сварная ГОСТ 23279-2012</h1>
 
-<form name="select" action="writeController"  method="post" target="_blank">
+<form  action="frontController"  method="get" target="_blank">
+<input type="hidden" name="command" value = "do_write" <%System.out.println("input -hidden - do write"); %> />
 <table width="1080px" border="1" align="center" cellspacing="0" >
 <tr>
 <td>Наименование сетки</td>
@@ -21,10 +29,11 @@
 </tr>
 <tr>
 <td>
+
              <select >
              <option value="0" selected>Выберите сетку из списка</option>
              <option value="1"> 4S500 50x50 </option>
-             <option value="2"> 4S500 100x100 </option>
+             <option name="name" value="4S500 100x100"> 4S500 100x100 </option>
              <option value="3"> 4S500 150x150 </option>
              <option value="4"> 4S500 200x200 </option>
              <option value="5"> 5S500 50x50 </option>
@@ -41,18 +50,19 @@
      
 </td>
 <td>
-<input type="number" name="cell_1" value="" required="required" placeholder="введите значение">
+<input type="text" name="size_cell_1" value="" required="required" placeholder="введите значение">
 </td>
 <td>
-<input type="number" name="cell_2" value="" required="required" placeholder="введите значение">
+<input type="text" name="size_cell_2" value="" required="required" placeholder="введите значение">
 </td>
 <td>
-<input type="number" name="diameter" value="" required="required" placeholder="введите значение"></td>
+<input type="text" name="diameter" value="" required="required" placeholder="введите значение"></td>
 <td>
 <%LocalDate localDate = LocalDate.now();
 out.println(localDate.toString());
 
 %>
+<input type="hidden" name="date" value=<%=localDate.toString()%> >
 </td>
 </tr>
 
@@ -67,5 +77,6 @@ out.println(localDate.toString());
 </div>
 
  </form>
+ </div>
 </body>
 </html>

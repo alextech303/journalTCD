@@ -11,7 +11,7 @@
 <br/>
 <form action="frontController" method="post">
 <h1><legend>Вход пользователя</legend></h1>
-<input type="hidden" name="command" value = "forward" /> 
+<input type="hidden" name="command" value = "go_to_base_page" /> 
 
 <input type="text" name="login" value="" placeholder="Имя пользователя"/>
 <br/>
@@ -20,7 +20,7 @@
 <br/>
 <br/>
 <button type="submit"> <img src="images/login.png" width="20px" height="20px">Войти в учетную запись  </button>
-
+<%System.out.println("start index.jsp"); %>
 </form>
 
 
