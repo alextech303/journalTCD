@@ -14,6 +14,7 @@ public class Go_To_Do_Write_Page implements Command {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, NoSuchAlgorithmException, InvalidKeySpecException {
+		System.out.println("Go_To_Do_Write_Page.execute - WEB-INF/jsp/doWrite.jsp");
 		request.getRequestDispatcher("WEB-INF/jsp/doWrite.jsp").forward(request, response);
 		
 	}
