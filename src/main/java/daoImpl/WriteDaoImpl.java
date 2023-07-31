@@ -16,6 +16,10 @@ import daoPoolConnection.ConnectionPoolException;
 
 public class WriteDaoImpl implements IWriteDao{
 
+	
+	
+	
+	
 	@Override
 	public List<Write> getListWrite5() {
 		
@@ -26,7 +30,7 @@ public class WriteDaoImpl implements IWriteDao{
 		try (Connection connect = ConnectionPool.getInstance().takeConnection()) {
 
 			st = connect.createStatement();
-			rs = st.executeQuery("SELECT * FROM journey");
+			rs = st.executeQuery("SELECT * FROM 23279_2012");
 
 			while (rs.next()) {
 				

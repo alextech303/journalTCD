@@ -3,6 +3,7 @@ package controllers;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
+import java.sql.SQLException;
 
 import daoPoolConnection.ConnectionPool;
 import daoPoolConnection.ConnectionPoolException;
@@ -48,7 +49,7 @@ public void destroy() {
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 	try {
 		processRequest(request, response);
-	} catch (NoSuchAlgorithmException | InvalidKeySpecException | IOException | ServletException e) {
+	} catch (NoSuchAlgorithmException | InvalidKeySpecException | IOException | ServletException | SQLException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
@@ -56,10 +57,15 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 }
 
 protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
-	loginRequest(request,response);
+	try {
+		loginRequest(request,response);
+	} catch (IOException | ServletException | SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 }
 
-private void loginRequest(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException{
+private void loginRequest(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException, SQLException{
 	response.setContentType("text/html");
 	String login = request.getParameter("login");
 	String password = request.getParameter("password");
@@ -90,7 +96,7 @@ private void loginRequest(HttpServletRequest request,HttpServletResponse respons
 }
 
 
-private void processRequest(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException, NoSuchAlgorithmException, InvalidKeySpecException{
+private void processRequest(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException, NoSuchAlgorithmException, InvalidKeySpecException, SQLException{
 	String commandName = request.getParameter("command");
 	System.out.println("start frontController.processRequest"); 
 	Command command = provider.getCommand(commandName);

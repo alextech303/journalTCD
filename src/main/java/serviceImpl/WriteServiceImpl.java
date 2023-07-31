@@ -1,6 +1,7 @@
 package serviceImpl;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import beans.Write;
 
@@ -28,4 +29,15 @@ public class WriteServiceImpl implements IWriteService{
 		return saveWrite;
 
 }
+
+	
+	
+	@Override
+	public List<Write> getListWrite() throws SQLException   {
+			
+		
+			return iwriteServiceDao.getListWrite5() ;
+		
+				
+	}
 }

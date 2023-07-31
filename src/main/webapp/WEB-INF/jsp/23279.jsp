@@ -119,6 +119,13 @@ out.println(localDate.toString());
 </div>
 
  </form>
+ <form action="frontController"  method="get" target="_blank">
+ <input type="hidden" name="command" value = "show_5_in_journey">
+ <div align="right">
+<button type="submit"> <img src="images/write.png" width="50px" height="50px" ><h3>Покfзать журнал</h3>  </button>
+</div>
+ </form>
+ 
  </div>
 </body>
 </html>
