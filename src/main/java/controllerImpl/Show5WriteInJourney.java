@@ -25,16 +25,10 @@ private final IWriteService iWriteService = ServiceProvider.getInstance().getiWr
 		List<Write> writes_5;
 		
 		writes_5 = iWriteService.getListWrite();
-		
-		System.out.println(writes_5.get(26));
-		
-		request.setAttribute("hello", "ok" );
-		
+								
 		request.setAttribute("writes", writes_5 );
-		
-	
-
-			request.getRequestDispatcher("WEB-INF/jsp/show_journal.jsp").forward(request, response);
+			
+		request.getRequestDispatcher("WEB-INF/jsp/show_journal.jsp").forward(request, response);
 	
 			
 			//response.sendRedirect("controller?command=go_to_error_page");
