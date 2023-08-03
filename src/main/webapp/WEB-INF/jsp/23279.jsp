@@ -16,42 +16,6 @@ body {
 <div >
 <h1 align="center" color="green">Сетка сварная ГОСТ 23279-2012</h1>
 
-<div id="endJournal">
-<table  width="1080px" border="1" align="center" cellspacing="0">
-<tr>
-<td>Наименование сетки</td>
-<td>Размер продольной ячейки, мм</td>
-<td>Размер поперечной ячейки, мм</td>
-<td>Фактический диаметр проволоки, мм</td>
-<td>Дата </td>
-</tr>
-<tr>
-<td>
-                         
-</td>
-<td>
-
-</td>
-<td>
-
-</td>
-<td>
-
-<td>
-
-
-</td>
-</tr>
-
-
-</table>
-</div>
-<div>
-</br>
-</br>
-</br>
-</br>
-</div>
 
 <form  action="frontController"  method="get" target="_blank">
 <input type="hidden" name="command" value = "do_write"/>
@@ -68,6 +32,7 @@ body {
 <td>Поперечные выпуски, мм </td>
 <td>Продольные выпуски, мм </td>
 <td>Прямолинейность, мм </td>
+<td>Диагональ, мм </td>
 <td>Ударное воздействие </td>
 <td>Примечание</td>
 </tr>
@@ -136,6 +101,10 @@ out.println(localDate.toString());
 </td>
 <td>
 <input type="text" name="Straightforwardness" value="" required="required" placeholder="введите значение">
+
+</td>
+<td>
+<input type="text" name="diagonal" value="" required="required" placeholder="введите значение">
 
 </td>
 <td>

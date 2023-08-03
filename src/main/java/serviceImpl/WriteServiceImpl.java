@@ -36,7 +36,7 @@ public class WriteServiceImpl implements IWriteService{
 	public List<Write> getListWrite() throws SQLException   {
 			
 		
-			return iwriteServiceDao.getListWrite5() ;
+			return iwriteServiceDao.getListWrite() ;
 		
 				
 	}

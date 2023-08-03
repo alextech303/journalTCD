@@ -7,7 +7,7 @@ import beans.Write;
 
 public interface IWriteDao {
 	
-	List<Write> getListWrite5() throws SQLException;  
+	List<Write> getListWrite() throws SQLException;  
 
 	boolean addWrite(Write write) throws SQLException;
 
