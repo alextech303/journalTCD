@@ -22,11 +22,11 @@ private final IWriteService iWriteService = ServiceProvider.getInstance().getiWr
 	public void execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, NoSuchAlgorithmException, InvalidKeySpecException, SQLException {
 		
-		List<Write> writes_5;
+		List<Write> writes;
 		
-		writes_5 = iWriteService.getListWrite();
+		writes = iWriteService.getListWrite();
 								
-		request.setAttribute("writes", writes_5 );
+		request.setAttribute("writes", writes );
 			
 		request.getRequestDispatcher("WEB-INF/jsp/show_journal.jsp").forward(request, response);
 	

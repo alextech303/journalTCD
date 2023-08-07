@@ -8,7 +8,7 @@ public class Write {
 	private String date;
 	private String name="";
 
-	private String batch_number;
+	private String butch_number;
 	private String nominal_diameter;
 	
 	private String size_cell_1;
@@ -18,21 +18,21 @@ public class Write {
 	private String card_size;
 	private String cross_releases;
 	private String longitudinal_releases;
-	private String Straightforwardness;
+	private String straightforwardness;
 	private String diagonal;
 	private String impact;
 	private String note;
 	
 	
 	
-	public Write(int id, String date, String name, String batch_number, String nominal_diameter, String size_cell_1,
+	public Write(int id, String date, String name, String butch_number, String nominal_diameter, String size_cell_1,
 			String size_cell_2, String sediment, String card_size, String cross_releases, String longitudinal_releases,
 			String straightforwardness, String diagonal, String impact, String note) {
 		super();
 		this.id = id;
 		this.date = date;
 		this.name = name;
-		this.batch_number = batch_number;
+		this.butch_number = butch_number;
 		this.nominal_diameter = nominal_diameter;
 		this.size_cell_1 = size_cell_1;
 		this.size_cell_2 = size_cell_2;
@@ -40,7 +40,7 @@ public class Write {
 		this.card_size = card_size;
 		this.cross_releases = cross_releases;
 		this.longitudinal_releases = longitudinal_releases;
-		Straightforwardness = straightforwardness;
+		this.straightforwardness = straightforwardness;
 		this.diagonal = diagonal;
 		this.impact = impact;
 		this.note = note;
@@ -48,13 +48,13 @@ public class Write {
 
 
 
-	public Write(String date, String name, String batch_number, String nominal_diameter, String size_cell_1,
+	public Write(String date, String name, String butch_number, String nominal_diameter, String size_cell_1,
 			String size_cell_2, String sediment, String card_size, String cross_releases, String longitudinal_releases,
 			String straightforwardness, String diagonal, String impact, String note) {
 		super();
 		this.date = date;
 		this.name = name;
-		this.batch_number = batch_number;
+		this.butch_number = butch_number;
 		this.nominal_diameter = nominal_diameter;
 		this.size_cell_1 = size_cell_1;
 		this.size_cell_2 = size_cell_2;
@@ -62,7 +62,7 @@ public class Write {
 		this.card_size = card_size;
 		this.cross_releases = cross_releases;
 		this.longitudinal_releases = longitudinal_releases;
-		Straightforwardness = straightforwardness;
+		this.straightforwardness = straightforwardness;
 		this.diagonal = diagonal;
 		this.impact = impact;
 		this.note = note;
@@ -106,14 +106,14 @@ public class Write {
 
 
 
-	public String getBatch_number() {
-		return batch_number;
+	public String getButch_number() {
+		return butch_number;
 	}
 
 
 
-	public void setBatch_number(String batch_number) {
-		this.batch_number = batch_number;
+	public void setButch_number(String butch_number) {
+		this.butch_number = butch_number;
 	}
 
 
@@ -203,13 +203,13 @@ public class Write {
 
 
 	public String getStraightforwardness() {
-		return Straightforwardness;
+		return straightforwardness;
 	}
 
 
 
 	public void setStraightforwardness(String straightforwardness) {
-		Straightforwardness = straightforwardness;
+		straightforwardness = straightforwardness;
 	}
 
 
@@ -252,7 +252,7 @@ public class Write {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(Straightforwardness, batch_number, card_size, cross_releases, date, diagonal, id, impact,
+		return Objects.hash(straightforwardness, butch_number, card_size, cross_releases, date, diagonal, id, impact,
 				longitudinal_releases, name, nominal_diameter, note, sediment, size_cell_1, size_cell_2);
 	}
 
@@ -267,8 +267,8 @@ public class Write {
 		if (getClass() != obj.getClass())
 			return false;
 		Write other = (Write) obj;
-		return Objects.equals(Straightforwardness, other.Straightforwardness)
-				&& Objects.equals(batch_number, other.batch_number) && Objects.equals(card_size, other.card_size)
+		return Objects.equals(straightforwardness, other.straightforwardness)
+				&& Objects.equals(butch_number, other.butch_number) && Objects.equals(card_size, other.card_size)
 				&& Objects.equals(cross_releases, other.cross_releases) && Objects.equals(date, other.date)
 				&& Objects.equals(diagonal, other.diagonal) && id == other.id && Objects.equals(impact, other.impact)
 				&& Objects.equals(longitudinal_releases, other.longitudinal_releases)
@@ -281,11 +281,11 @@ public class Write {
 
 	@Override
 	public String toString() {
-		return "Write [id=" + id + ", date=" + date + ", name=" + name + ", batch_number=" + batch_number
+		return "Write [id=" + id + ", date=" + date + ", name=" + name + ", batch_number=" + butch_number
 				+ ", nominal_diameter=" + nominal_diameter + ", size_cell_1=" + size_cell_1 + ", size_cell_2="
 				+ size_cell_2 + ", sediment=" + sediment + ", card_size=" + card_size + ", cross_releases="
 				+ cross_releases + ", longitudinal_releases=" + longitudinal_releases + ", Straightforwardness="
-				+ Straightforwardness + ", diagonal=" + diagonal + ", impact=" + impact + ", note=" + note + "]";
+				+ straightforwardness + ", diagonal=" + diagonal + ", impact=" + impact + ", note=" + note + "]";
 	}
 	
 

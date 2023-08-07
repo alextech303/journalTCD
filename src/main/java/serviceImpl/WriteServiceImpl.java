@@ -15,10 +15,12 @@ public class WriteServiceImpl implements IWriteService{
 
 	@Override
 	public boolean save(Write write) throws SQLException, ServiceException {
-		boolean saveWrite = false;
+		boolean saveWrite = true;
+		System.out.println(" WriteServiceImpl : boolean addWrite = true;"); 
 		try {
 		if(iwriteServiceDao.addWrite(write)) {
 			saveWrite = true;
+			
 		} else {
 			throw new ServiceException("Write don't save in BD");
 		}
@@ -26,6 +28,7 @@ public class WriteServiceImpl implements IWriteService{
 			
 			throw new SQLException(e);
 	}
+		
 		return saveWrite;
 
 }

@@ -20,15 +20,16 @@ public class WriteDaoImpl implements IWriteDao{
 	
 	
 	
+
 	@Override
 	public List<Write> getListWrite() {
 		
 		List<Write> listOfWrite = new ArrayList<Write>();
-		Statement st = null;
-		ResultSet rs = null;
+		Statement st = null ;
+		ResultSet rs ;
 
 		try (Connection connect = ConnectionPool.getInstance().takeConnection()) {
-			
+			st=connect.createStatement();
 			rs = st.executeQuery("SELECT * FROM 23279_2012");
 
 			while (rs.next()) {
@@ -37,7 +38,7 @@ public class WriteDaoImpl implements IWriteDao{
 				int id = rs.getInt(1);
 				String date = rs.getString(2);
 				String name = rs.getString(3);
-				String batch_number = rs.getString(4);
+				String butch_number = rs.getString(4);
 				String nominal_diameter=rs.getString(5);
 				String size_cell_1 = rs.getString(6);
 				String size_cell_2 = rs.getString(7);
@@ -45,13 +46,13 @@ public class WriteDaoImpl implements IWriteDao{
 				String card_size = rs.getString(9);
 				String cross_releases = rs.getString(10);
 				String longitudinal_releases = rs.getString(11);
-				String Straightforwardness = rs.getString(12);
+				String straightforwardness = rs.getString(12);
 				String diagonal = rs.getString(13);
 				String impact = rs.getString(14);
 				String note = rs.getString(15);
 
-				listOfWrite.add(new Write(id,date,name,batch_number,nominal_diameter, size_cell_1, size_cell_2,
-						sediment, card_size,cross_releases,longitudinal_releases,Straightforwardness,diagonal,impact,note));
+				listOfWrite.add(new Write(id,date,name,butch_number,nominal_diameter, size_cell_1, size_cell_2,
+						sediment, card_size,cross_releases,longitudinal_releases,straightforwardness,diagonal,impact,note));
 
 			}
 
@@ -70,13 +71,12 @@ public class WriteDaoImpl implements IWriteDao{
 		boolean addWrite = true;
 		try (Connection connect = ConnectionPool.getInstance().takeConnection()) {
 
-			String sql = "INSERT INTO 23279_2012(date,name,batch_number,nominal_diameter, size_cell_1, size_cell_2,\r\n"
-					+ "						sediment, card_size,cross_releases,longitudinal_releases,Straightforwardness,diagonal,impact,note) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO 23279_2012(date,name,butch_number,nominal_diameter, size_cell_1, size_cell_2,sediment, card_size,cross_releases,longitudinal_releases,straightforwardness,diagonal,impact,note) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			PreparedStatement ps = connect.prepareStatement(sql);
 
 			ps.setString(1, write.getDate());
 			ps.setString(2, write.getName());
-			ps.setString(3, write.getBatch_number());
+			ps.setString(3, write.getButch_number());
 			ps.setString(4, write.getNominal_diameter());
 			ps.setString(5, write.getSize_cell_1());
 			ps.setString(6, write.getSize_cell_2());
@@ -88,10 +88,11 @@ public class WriteDaoImpl implements IWriteDao{
 			ps.setString(12, write.getDiagonal());
 			ps.setString(13, write.getImpact());
 			ps.setString(14, write.getNote());
-						
+				System.out.println("boolean addWrite = true;");		
 			ps.executeUpdate();
 
 		} catch (ConnectionPoolException e) {
+			System.out.println("addWrite = false;");
 			addWrite = false;
 			e.printStackTrace();
 

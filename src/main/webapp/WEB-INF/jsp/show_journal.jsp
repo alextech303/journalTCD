@@ -30,39 +30,74 @@
 <td><strong>Поперечные выпуски, мм</strong> </td>
 <td><strong>Продольные выпуски, мм</strong> </td>
 <td><strong>Прямолинейность, мм </strong></td>
+<td><strong>Диагональ </strong></td>
 <td><strong>Ударное воздействие </strong></td>
 <td><strong>Примечание</strong></td>
 
 </tr>
 
 <tr>
+
 <td>
 <c:out value="${writes.id}" default="null"></c:out>
 </td>
+
 <td>
 <c:out value="${writes.date}" default="null"></c:out>
 </td>
+
 <td>
 <c:out value="${writes.name}" default="null"></c:out>
 </td>
+
 <td>
-<c:out value="${writes.batch_number}" default="null"></c:out>
+<c:out value="${writes.butch_number}" default="null"></c:out>
 </td>
 
-
+<td>
+<c:out value="${writes.nominal_diameter}" default="null"></c:out>
+</td>
 
 <td>
 <c:out value="${writes.size_cell_1}" default="null"></c:out>
 </td>
+
 <td>
 <c:out value="${writes.size_cell_2}" default="null"></c:out>
 </td>
-<td>
-<c:out value="${writes.diameter}" default="null"></c:out>
-<td>
 
-<c:out value="${writes.date}" default="null"></c:out>
+<td>
+<c:out value="${writes.sediment}" default="null"></c:out>
 </td>
+
+<td>
+<c:out value="${writes.card_size}" default="null"></c:out>
+</td>
+
+<td>
+<c:out value="${writes.cross_releases}" default="null"></c:out>
+</td>
+
+<td>
+<c:out value="${writes.longitudinal_releases}" default="null"></c:out>
+</td>
+
+<td>
+<c:out value="${writes.straightforwardness}" default="null"></c:out>
+</td>
+
+<td>
+<c:out value="${writes.diagonal}" default="null"></c:out>
+</td>
+
+<td>
+<c:out value="${writes.impact}" default="null"></c:out>
+</td>
+
+<td>
+<c:out value="${writes.note}" default="null"></c:out>
+</td>
+
 </tr>
 
 

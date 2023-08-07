@@ -10,7 +10,7 @@
 <h1>Запись сделана!!!"</h1>
 
 <form action ="frontController" method="get">
-<input type="hidden" name="command" value = "go_to_base_page" <%System.out.println("doWrite.jsp - name=command value = go_to_base_page "); %> />
+<input type="hidden" name="command" value = "go_to_base_page" />
 <button type="submit"> Вернуться к списку журналов    </button> 
 </form>
 

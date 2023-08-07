@@ -65,8 +65,7 @@ out.println(localDate.toString());
   
 </td>
 <td>
-<input type="text" name="batch_number" value="" required="required" placeholder="введите значение">
-
+<input type="text" name="butch_number" value="" required="required" placeholder="введите значение">
 </td>
 
 <td>
@@ -100,7 +99,7 @@ out.println(localDate.toString());
 
 </td>
 <td>
-<input type="text" name="Straightforwardness" value="" required="required" placeholder="введите значение">
+<input type="text" name="straightforwardness" value="" required="required" placeholder="введите значение">
 
 </td>
 <td>
@@ -127,6 +126,7 @@ out.println(localDate.toString());
 </div>
 
  </form>
+ 
  <form action="frontController"  method="get" target="_blank">
  <input type="hidden" name="command" value = "show_5_in_journey">
  <div align="right">
