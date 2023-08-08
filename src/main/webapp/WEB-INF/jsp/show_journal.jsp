@@ -6,36 +6,38 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="styles/show.css">
 </head>
 <body>
-<h1 align="center"><strong>Журнал сетки сварной ГОСТ 23279-2012"</strong> </h1>
+<h1 align="center">Журнал сетки сварной ГОСТ 23279-2012"</h1>
 
 <c:if test="${requestScope.hello eq 'ok' }">
+<h3>
 <c:out value="Hello !!!"></c:out>
+</h3>
+                  
 </c:if>
 
-	<c:forEach var="writes" items="${requestScope.writes}">
-	<div>
-	<table width="1080px" border="1" align="center" cellspacing="0" >
+<table width="1080px" border="1" align="center" cellspacing="0" > 
 <tr>
-<td>№ п/п</td>
-<td><strong>Дата </strong></td>
-<td><strong>Наименование сетки</strong></td>
-<td><strong>Номер партии</strong></td>
-<td><strong>Номинальный диаметер, мм</strong></td>
-<td><strong>Размер продольной ячейки, мм</strong></td>
-<td><strong>Размер поперечной ячейки, мм</strong></td>
-<td><strong>Относительная осадка стержней</strong></td>
-<td><strong>Размер карты, см </strong></td>
-<td><strong>Поперечные выпуски, мм</strong> </td>
-<td><strong>Продольные выпуски, мм</strong> </td>
-<td><strong>Прямолинейность, мм </strong></td>
-<td><strong>Диагональ </strong></td>
-<td><strong>Ударное воздействие </strong></td>
-<td><strong>Примечание</strong></td>
+<th>№ п/п</th>
+<th>Дата </th>
+<th>Наименование сетки</th>
+<th>Номер партии</th>
+<th>Номинальный диаметер, мм</th>
+<th>Размер продольной ячейки, мм</th>
+<th>Размер поперечной ячейки, мм</th>
+<th>Относительная осадка стержней</th>
+<th>Размер карты, см </th>
+<th>Поперечные выпуски, мм</th>
+<th>Продольные выпуски, мм</th>
+<th>Прямолинейность, мм </th>
+<th>Диагональ</th>
+<th>Ударное воздействие</th>
+<th>Примечание</th>
 
 </tr>
-
+<c:forEach var="writes" items="${requestScope.writes}">
 <tr>
 
 <td>
@@ -99,15 +101,13 @@
 </td>
 
 </tr>
+</c:forEach>
 
-
-
-
-</table>
+ </table> 
 	
-	</div>
+	
 
-   </c:forEach>
+   
    </br>
 <form action ="frontController" method="get">
 <input type="hidden" name="command" value = "go_to_base_page" />

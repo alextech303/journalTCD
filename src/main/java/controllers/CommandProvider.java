@@ -8,6 +8,7 @@ import controllerImpl.GoToErrorPage;
 import controllerImpl.Go_To_23279;
 import controllerImpl.Go_To_Base_Page;
 import controllerImpl.Go_To_Do_Write_Page;
+import controllerImpl.Go_To_WireS500;
 import controllerImpl.Show5WriteInJourney;
 
 public class CommandProvider {
@@ -21,6 +22,7 @@ public class CommandProvider {
 		commands.put(CommandName.DO_WRITE, new DoWrite23279());
 		commands.put(CommandName.GO_TO_DO_WRITE_PAGE, new Go_To_Do_Write_Page());
 		commands.put(CommandName.SHOW_5_IN_JOURNEY, new Show5WriteInJourney());
+		commands.put(CommandName.GO_TO_WIRES500, new Go_To_WireS500());
 	}
 
 	public Command getCommand(String name) {

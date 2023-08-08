@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 <body background="images/fon.jpg">
 <h1>Журнал контроля качества готовой продукции ООО "Завод тканых и сварных сеток"</h1>
@@ -12,12 +13,15 @@
 </br>
 <form action ="frontController" method="get">
 <input type="hidden" name="command" value = "go_to_23279" />
-<button type="submit"> Сетка сварная ГОСТ 23279-2012    </button> 
+<button type="submit" > <img src="images/23279.jpg" width="140px" height="100px" >   </button> 
 </form>
 </br>
 </br>
-<form action ="3282.jsp" method="get">
-<button type="submit"> Проволока общего назначения ГОСТ 3282-74 </button> 
+<form action ="frontController" method="get">
+<input type="hidden" name="command" value = "go_to_wire" />
+<div id="centerLayer">
+<button type="submit" autofocus="autofocus"><img src="images/s500_2.jpg" width="140px" height="100px" >  </button> 
+</div>
 </form>
 </body>
 </html>

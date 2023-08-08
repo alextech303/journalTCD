@@ -20,7 +20,7 @@
 <br/>
 <br/>
 <button type="submit"> <img src="images/login.png" width="20px" height="20px">Войти в учетную запись  </button>
-<%System.out.println("start index.jsp"); %>
+
 </form>
 
 

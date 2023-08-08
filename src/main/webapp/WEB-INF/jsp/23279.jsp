@@ -6,12 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Сетка сварная ГОСТ 23279-2012</title>
 <link rel="stylesheet" type="text/css" href="styles/23279_Style.css">
-<style>
-
-body {
-}
-
-</style> 
+</head> 
 <body background="images/fon.jpg">
 <div >
 <h1 align="center" color="green">Сетка сварная ГОСТ 23279-2012</h1>
