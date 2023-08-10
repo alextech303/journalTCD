@@ -18,7 +18,7 @@
 </br>
 </br>
 <form action ="frontController" method="get">
-<input type="hidden" name="command" value = "go_to_wire" />
+<input type="hidden" name="command" value = "go_to_wires500" />
 <div id="centerLayer">
 <button type="submit" autofocus="autofocus"><img src="images/s500_2.jpg" width="140px" height="100px" >  </button> 
 </div>

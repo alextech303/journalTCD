@@ -1,5 +1,5 @@
 @charset "UTF-8";
-#centerLayer{
+.centerLayer{
 	margin-left: 30%; /* Отступ слева */
      /*margin-right: 30%;  Отступ справа */
      /* background: #fc0;  Цвет фона */
