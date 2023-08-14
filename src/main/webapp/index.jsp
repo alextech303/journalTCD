@@ -5,8 +5,16 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="styles/index.css">
+<style>
+
+ body {
+background: url(images/bg.bmp);
+background-size: 100%;
+} 
+</style>
 </head>
-<body background="images/bg.bmp" text="blue">
+<body text="blue" >
 
 <br/>
 <form action="frontController" method="post">

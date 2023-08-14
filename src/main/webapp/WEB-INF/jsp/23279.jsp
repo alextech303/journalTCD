@@ -29,6 +29,7 @@
 <td>Прямолинейность, мм </td>
 <td>Диагональ, мм </td>
 <td>Ударное воздействие </td>
+<td>Используемая проволока </td>
 <td>Примечание</td>
 </tr>
 <tr>
@@ -108,6 +109,11 @@ out.println(localDate.toString());
 <option value="bad">не удовлетворительно</option>
 </select>
 </td>
+<td>
+<input type="text" name="wire_idwire" value="" required="required" placeholder="введите № п/п проволоки">
+
+</td>
+
 <td>
 <textarea name="note" rows="2" cols="45" placeholder="примечание"></textarea>
 </td>

@@ -18,6 +18,8 @@ import service.ServiceProvider;
 
 public class DoWrite23279 implements Command {
 	
+	private static int wire_idwire;
+
 	private final IWriteService iWriteService = ServiceProvider.getInstance().getiWriteService();
 	
 	private static final String JSP_NAME_PARAM = "name";
@@ -33,11 +35,12 @@ public class DoWrite23279 implements Command {
 	private static final String JSP_STRAIGHTFORWARDNESS_PARAM = "straightforwardness";
 	private static final String JSP_DIAGONAL_PARAM = "diagonal";
 	private static final String JSP_IMPACT_PARAM = "impact";
+	private static final int JSP_WIRE_IDWIRE = wire_idwire;
 	private static final String JSP_NOTE_PARAM = "note";
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("DoWrite23279 - execute");
+	
 		Write newWrite;
 		 String date;
 		 String name;
@@ -55,6 +58,7 @@ public class DoWrite23279 implements Command {
 		 String straightforwardness;
 		 String diagonal;
 		 String impact;
+		 int wire_idwire;
 		 String note;
 		 
 		date = request.getParameter(JSP_DATE_PARAM);
@@ -70,6 +74,7 @@ public class DoWrite23279 implements Command {
         straightforwardness= request.getParameter(JSP_STRAIGHTFORWARDNESS_PARAM);
         diagonal= request.getParameter(JSP_DIAGONAL_PARAM);
         impact= request.getParameter(JSP_IMPACT_PARAM);
+     //   wire_idwire=request.getParameterValues(JSP_WIRE_IDWIRE);
         note= request.getParameter(JSP_NOTE_PARAM);
         
         newWrite = new Write(date,name,butch_number,nominal_diameter,size_cell_1,size_cell_2,sediment,card_size,cross_releases,
@@ -77,7 +82,6 @@ public class DoWrite23279 implements Command {
 		try {
 			
 			if (iWriteService.save(newWrite)) {
-				System.out.println("iWriteService.save(newWrite) == true");
 				request.getSession(true).setAttribute("otk1", "ok");
 				request.getSession(true).setAttribute("otk2", "ok");
 				response.sendRedirect("frontController?command=go_to_do_write_page");

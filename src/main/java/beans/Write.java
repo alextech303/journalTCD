@@ -5,6 +5,7 @@ import java.util.Objects;
 
 public class Write {
 	private int id;
+	
 	private String date;
 	private String name="";
 
@@ -21,13 +22,14 @@ public class Write {
 	private String straightforwardness;
 	private String diagonal;
 	private String impact;
+	private int wire_idwire;
 	private String note;
 	
 	
 	
 	public Write(int id, String date, String name, String butch_number, String nominal_diameter, String size_cell_1,
 			String size_cell_2, String sediment, String card_size, String cross_releases, String longitudinal_releases,
-			String straightforwardness, String diagonal, String impact, String note) {
+			String straightforwardness, String diagonal, String impact, int wire_idwire, String note) {
 		super();
 		this.id = id;
 		this.date = date;
@@ -43,6 +45,7 @@ public class Write {
 		this.straightforwardness = straightforwardness;
 		this.diagonal = diagonal;
 		this.impact = impact;
+		this.wire_idwire=wire_idwire;
 		this.note = note;
 	}
 
@@ -238,6 +241,18 @@ public class Write {
 
 
 
+	public int getWire_idwire() {
+		return wire_idwire;
+	}
+
+
+
+	public void setWire_idwire(int wire_idwire) {
+		this.wire_idwire = wire_idwire;
+	}
+
+
+
 	public String getNote() {
 		return note;
 	}
@@ -252,8 +267,8 @@ public class Write {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(straightforwardness, butch_number, card_size, cross_releases, date, diagonal, id, impact,
-				longitudinal_releases, name, nominal_diameter, note, sediment, size_cell_1, size_cell_2);
+		return Objects.hash(butch_number, card_size, cross_releases, date, diagonal, id, impact, longitudinal_releases,
+				name, nominal_diameter, note, sediment, size_cell_1, size_cell_2, straightforwardness, wire_idwire);
 	}
 
 
@@ -267,26 +282,35 @@ public class Write {
 		if (getClass() != obj.getClass())
 			return false;
 		Write other = (Write) obj;
-		return Objects.equals(straightforwardness, other.straightforwardness)
-				&& Objects.equals(butch_number, other.butch_number) && Objects.equals(card_size, other.card_size)
+		return Objects.equals(butch_number, other.butch_number) && Objects.equals(card_size, other.card_size)
 				&& Objects.equals(cross_releases, other.cross_releases) && Objects.equals(date, other.date)
 				&& Objects.equals(diagonal, other.diagonal) && id == other.id && Objects.equals(impact, other.impact)
 				&& Objects.equals(longitudinal_releases, other.longitudinal_releases)
 				&& Objects.equals(name, other.name) && Objects.equals(nominal_diameter, other.nominal_diameter)
 				&& Objects.equals(note, other.note) && Objects.equals(sediment, other.sediment)
-				&& Objects.equals(size_cell_1, other.size_cell_1) && Objects.equals(size_cell_2, other.size_cell_2);
+				&& Objects.equals(size_cell_1, other.size_cell_1) && Objects.equals(size_cell_2, other.size_cell_2)
+				&& Objects.equals(straightforwardness, other.straightforwardness)
+				&& Objects.equals(wire_idwire, other.wire_idwire);
 	}
 
 
 
 	@Override
 	public String toString() {
-		return "Write [id=" + id + ", date=" + date + ", name=" + name + ", batch_number=" + butch_number
+		return "Write [id=" + id + ", date=" + date + ", name=" + name + ", butch_number=" + butch_number
 				+ ", nominal_diameter=" + nominal_diameter + ", size_cell_1=" + size_cell_1 + ", size_cell_2="
 				+ size_cell_2 + ", sediment=" + sediment + ", card_size=" + card_size + ", cross_releases="
-				+ cross_releases + ", longitudinal_releases=" + longitudinal_releases + ", Straightforwardness="
-				+ straightforwardness + ", diagonal=" + diagonal + ", impact=" + impact + ", note=" + note + "]";
+				+ cross_releases + ", longitudinal_releases=" + longitudinal_releases + ", straightforwardness="
+				+ straightforwardness + ", diagonal=" + diagonal + ", impact=" + impact + ", wire_idwire=" + wire_idwire
+				+ ", note=" + note + "]";
 	}
+
+
+
+
+
+
+
 	
 
 
