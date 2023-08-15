@@ -31,10 +31,10 @@ public void init(ServletConfig config) throws ServletException {
 	try {
 		ConnectionPool.getInstance().initPoolData();
 		ConnectionPool.getInstance().takeConnection();
-		System.out.println("start frontController.init"); 
+		
 
 	} catch (ConnectionPoolException e) {
-		System.out.println("start frontController.init-exception"); 
+		
 		e.printStackTrace();
 
 	}
@@ -42,7 +42,7 @@ public void init(ServletConfig config) throws ServletException {
 
 public void destroy() {
 	
-	System.out.println("start frontController.destroy"); 
+	
 	ConnectionPool.getInstance().dispose();
 }
 
@@ -69,8 +69,7 @@ private void loginRequest(HttpServletRequest request,HttpServletResponse respons
 	response.setContentType("text/html");
 	String login = request.getParameter("login");
 	String password = request.getParameter("password");
-	System.out.println("start frontController.loginRequest"); 
-	
+		
 	if ((login.equals("Bogush") && password.equals("1111")) || (login.equals("otk2") && password.equals("2222")) ){
 
 		/*

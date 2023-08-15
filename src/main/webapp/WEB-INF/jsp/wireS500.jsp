@@ -4,13 +4,16 @@
 <!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
 <title>Проволока арматурная класса S500</title>
+
 <link rel="stylesheet" type="text/css" href="styles/wireS500.css">
+
 <body background="images/fon.jpg">
 <h1 id="centerLayer">Проволока арматурная класса S500</h1>
 <div>
 <form  action="frontController"  method="get" target="_blank">
-<input type="hidden" name="command" value = "doWriteS500"/>
+<input type="hidden" name="command" value = "do_writes500"/>
 <table width="1080px" border="1" align="center" cellspacing="0" >
 <tr>
 <th>Дата </th>
@@ -113,6 +116,11 @@ out.println(localDate.toString());
 </td>
 </tr>
 </table>
+<div align="right">
+<button type="submit"> <img src="images/write.png" width="50px" height="50px" ><h3>Сделать запись в журнал</h3>  </button>
 </div>
+</form>
+</div>
+
 </body>
 </html>
