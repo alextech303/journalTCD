@@ -120,6 +120,12 @@ out.println(localDate.toString());
 <button type="submit"> <img src="images/write.png" width="50px" height="50px" ><h3>Сделать запись в журнал</h3>  </button>
 </div>
 </form>
+<form action="frontController"  method="get" target="_blank">
+ <input type="hidden" name="command" value = "show_writes_in_journeyS500">
+ <div align="right">
+<button type="submit"> <img src="images/show.png" width="50px" height="50px" ><h3>Показать журнал</h3>  </button>
+</div>
+ </form>
 </div>
 
 </body>

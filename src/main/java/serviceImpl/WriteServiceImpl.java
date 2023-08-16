@@ -63,4 +63,11 @@ public class WriteServiceImpl implements IWriteService{
 		return saveWrite;
 
 }
+
+
+
+	@Override
+	public List<WriteS500> getListWriteS500() throws SQLException {
+		return iwriteServiceDao.getListWriteS500() ;
+	}
 }
