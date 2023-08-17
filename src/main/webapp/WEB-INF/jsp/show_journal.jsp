@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="styles/show.css">
 </head>
 <body>
-<h1 align="center">Журнал сетки сварной ГОСТ 23279-2012"</h1>
+<h1 align="center">Журнал регистрации показателей сетки сварной ГОСТ 23279-2012"</h1>
 
 <c:if test="${requestScope.hello eq 'ok' }">
 <h3>

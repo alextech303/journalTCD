@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="styles/show.css">
 </head>
 <body>
-<h1 align="center">Журнал показателей проволоки S500"</h1>
+<h1 align="center">Журнал регистрации показателей проволоки S500"</h1>
 
 <c:if test="${requestScope.hello eq 'ok' }">
 <h3>
@@ -20,6 +20,7 @@
 
 <table width="1080px" border="1" align="center" cellspacing="0" > 
 <tr>
+<th>№ п/п</th>
 <th>Дата </th>
 <th>Наименование арматурной проволоки</th> 
 <th>Номер партии</th>
