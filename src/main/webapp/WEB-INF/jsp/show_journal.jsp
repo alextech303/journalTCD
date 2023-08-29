@@ -34,6 +34,7 @@
 <th>Прямолинейность, мм </th>
 <th>Диагональ</th>
 <th>Ударное воздействие</th>
+<th>Ссылка на проволоку из таблицы S500</th>
 <th>Примечание</th>
 
 </tr>
@@ -94,6 +95,10 @@
 
 <td>
 <c:out value="${writes.impact}" default="null"></c:out>
+</td>
+
+<td>
+<c:out value="${writesS500.id}" default="null"></c:out>
 </td>
 
 <td>

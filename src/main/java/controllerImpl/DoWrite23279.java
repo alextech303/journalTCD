@@ -18,8 +18,6 @@ import service.ServiceProvider;
 
 public class DoWrite23279 implements Command {
 	
-	private static int wire_idwire;
-
 	private final IWriteService iWriteService = ServiceProvider.getInstance().getiWriteService();
 	
 	private static final String JSP_NAME_PARAM = "name";
@@ -35,7 +33,7 @@ public class DoWrite23279 implements Command {
 	private static final String JSP_STRAIGHTFORWARDNESS_PARAM = "straightforwardness";
 	private static final String JSP_DIAGONAL_PARAM = "diagonal";
 	private static final String JSP_IMPACT_PARAM = "impact";
-	private static final int JSP_WIRE_IDWIRE = wire_idwire;
+	private static final String JSP_WIRE_IDWIRE = "wire_idwire";
 	private static final String JSP_NOTE_PARAM = "note";
 
 	@Override
@@ -74,11 +72,11 @@ public class DoWrite23279 implements Command {
         straightforwardness= request.getParameter(JSP_STRAIGHTFORWARDNESS_PARAM);
         diagonal= request.getParameter(JSP_DIAGONAL_PARAM);
         impact= request.getParameter(JSP_IMPACT_PARAM);
-     //   wire_idwire=request.getParameterValues(JSP_WIRE_IDWIRE);
+        wire_idwire = Integer.parseInt(request.getParameter(JSP_WIRE_IDWIRE));
         note= request.getParameter(JSP_NOTE_PARAM);
         
         newWrite = new Write(date,name,butch_number,nominal_diameter,size_cell_1,size_cell_2,sediment,card_size,cross_releases,
-        		longitudinal_releases,straightforwardness,diagonal,impact,note);
+        		longitudinal_releases,straightforwardness,diagonal,impact,wire_idwire,note);
 		try {
 			
 			if (iWriteService.save(newWrite)) {

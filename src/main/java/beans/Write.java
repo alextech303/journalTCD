@@ -27,6 +27,29 @@ public class Write {
 	
 	
 	
+	public Write(String date, String name, String butch_number, String nominal_diameter, String size_cell_1,
+			String size_cell_2, String sediment, String card_size, String cross_releases, String longitudinal_releases,
+			String straightforwardness, String diagonal, String impact, int wire_idwire, String note) {
+		super();
+		this.date = date;
+		this.name = name;
+		this.butch_number = butch_number;
+		this.nominal_diameter = nominal_diameter;
+		this.size_cell_1 = size_cell_1;
+		this.size_cell_2 = size_cell_2;
+		this.sediment = sediment;
+		this.card_size = card_size;
+		this.cross_releases = cross_releases;
+		this.longitudinal_releases = longitudinal_releases;
+		this.straightforwardness = straightforwardness;
+		this.diagonal = diagonal;
+		this.impact = impact;
+		this.wire_idwire = wire_idwire;
+		this.note = note;
+	}
+
+
+
 	public Write(int id, String date, String name, String butch_number, String nominal_diameter, String size_cell_1,
 			String size_cell_2, String sediment, String card_size, String cross_releases, String longitudinal_releases,
 			String straightforwardness, String diagonal, String impact, int wire_idwire, String note) {

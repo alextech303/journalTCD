@@ -62,7 +62,6 @@ private final IWriteService iWriteService = ServiceProvider.getInstance().getiWr
 		 
 		date = request.getParameter(JSP_DATE_PARAM);
 		name = request.getParameter(JSP_NAME_PARAM);
-		System.out.println("name == "+name);
 		butch_number = request.getParameter(JSP_BUTCH_NUMBER_PARAM);
 		nominal_diameter = request.getParameter(JSP_NOMINAL_DIAMETER_PARAM);
 		nominal_square = request.getParameter(JSP_NOMINAL_SQUARE);

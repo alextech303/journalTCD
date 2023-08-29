@@ -110,7 +110,7 @@ out.println(localDate.toString());
 </select>
 </td>
 <td>
-<input type="text" name="wire_idwire" value="" required="required" placeholder="введите № п/п проволоки">
+<input type="number" name="wire_idwire" value="" required="required" placeholder="введите № п/п проволоки">
 
 </td>
 

@@ -97,7 +97,7 @@ private void loginRequest(HttpServletRequest request,HttpServletResponse respons
 
 private void processRequest(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException, NoSuchAlgorithmException, InvalidKeySpecException, SQLException{
 	String commandName = request.getParameter("command");
-	System.out.println("start frontController.processRequest"); 
+	 
 	Command command = provider.getCommand(commandName);
 	try {
 		command.execute(request, response);
