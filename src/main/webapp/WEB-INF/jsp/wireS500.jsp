@@ -7,10 +7,15 @@
 
 <title>Проволока арматурная класса S500</title>
 
-<link rel="stylesheet" type="text/css" href="styles/wireS500.css">
-
-<body background="images/fon.jpg">
-<h1 id="centerLayer">Проволока арматурная класса S500</h1>
+<style>
+ body {
+background: url(images/fon.jpg);
+background-size: 100%;
+} 
+</style>
+</head>
+<body >
+<h1><em>Проволока арматурная класса S500</em></h1>
 <div>
 <form  action="frontController"  method="get" target="_blank">
 <input type="hidden" name="command" value = "do_writes500"/>
@@ -116,14 +121,17 @@ out.println(localDate.toString());
 </td>
 </tr>
 </table>
-<div align="right">
-<button type="submit"> <img src="images/write.png" width="50px" height="50px" ><h3>Сделать запись в журнал</h3>  </button>
+</br>
+<div align="left">
+<button type="submit"> <img src="images/write.png" width="35px" height="35px" >Сделать запись в журнал</button>
 </div>
+</br>
+</br>
 </form>
 <form action="frontController"  method="get" target="_blank">
  <input type="hidden" name="command" value = "show_writes_in_journeyS500">
- <div align="right">
-<button type="submit"> <img src="images/show.png" width="50px" height="50px" ><h3>Показать журнал</h3>  </button>
+ <div align="left">
+<button type="submit"> <img src="images/show.png" width="35px" height="35px" >Журнал</button>
 </div>
  </form>
 </div>

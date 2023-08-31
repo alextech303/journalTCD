@@ -87,8 +87,13 @@ private void loginRequest(HttpServletRequest request,HttpServletResponse respons
 			response.sendRedirect("controller?command=go_to_error_page");
 		}
 	}else {
-		RequestDispatcher requestDispatcher=request.getRequestDispatcher("/WEB-INF/jsp/error.jsp");
-		requestDispatcher.forward(request, response);
+		String commandName = request.getParameter("command");
+		// System.out.println("commandName = "+commandName);
+		//response.sendRedirect("controller?command=go_to_error_page");
+		
+		  RequestDispatcher requestDispatcher=request.getRequestDispatcher("/WEB-INF/jsp/error.jsp");
+		  requestDispatcher.forward(request, response);
+		 
 	}
 	
 			
@@ -97,7 +102,7 @@ private void loginRequest(HttpServletRequest request,HttpServletResponse respons
 
 private void processRequest(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException, NoSuchAlgorithmException, InvalidKeySpecException, SQLException{
 	String commandName = request.getParameter("command");
-	 
+	
 	Command command = provider.getCommand(commandName);
 	try {
 		command.execute(request, response);

@@ -5,11 +5,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Сетка сварная ГОСТ 23279-2012</title>
-<link rel="stylesheet" type="text/css" href="styles/23279_Style.css">
+
+<style>
+
+ body {
+background: url(images/fon.jpg);
+background-size: 100%;
+} 
+</style>
 </head> 
-<body background="images/fon.jpg">
-<div >
-<h1 align="center" color="green">Сетка сварная ГОСТ 23279-2012</h1>
+<body>
+<div>
+<h1 align="center"><em>Сетка сварная ГОСТ 23279-2012</em></h1>
 
 
 <form  action="frontController"  method="get" target="_blank">
@@ -110,8 +117,18 @@ out.println(localDate.toString());
 </select>
 </td>
 <td>
-<input type="number" name="wire_idwire" value="" required="required" placeholder="введите № п/п проволоки">
 
+<a href="frontController?command=show_writes_in_journeys500_2">проволока</a>
+<!--
+<a href="controller?command=go_to_view_news&idnews=${news.idnews}">viewlink	</a>
+
+ 
+<input type="image" src="images/write.png" width="25px" height="25px" >	
+
+<c:import url="/WEB-INF/jsp/show_journalS500.jsp" />
+   
+<input type="number" name="wire_idwire" value="" required="required" placeholder="введите № п/п проволоки">
+     -->
 </td>
 
 <td>
@@ -122,16 +139,18 @@ out.println(localDate.toString());
 </table>
 </br>
 </br>
-<div align="right">
-<button type="submit"> <img src="images/write.png" width="50px" height="50px" ><h3>Сделать запись в журнал</h3>  </button>
+<div align="left">
+<button type="submit"> <img src="images/write.png" width="25px" height="25px" >Сделать запись  </button>
 </div>
 
  </form>
  
  <form action="frontController"  method="get" target="_blank">
  <input type="hidden" name="command" value = "show_5_in_journey">
- <div align="right">
-<button type="submit"> <img src="images/show.png" width="50px" height="50px" ><h3>Показать журнал</h3>  </button>
+ <div align="left">
+ </br>
+  </br>
+<button type="submit"> <img src="images/show.png" width="25px" height="25px" >Журнал </button>
 </div>
  </form>
  

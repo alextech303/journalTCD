@@ -1,8 +1,5 @@
 @charset "UTF-8";
 
 #centerLayer{
-	margin-left: 30%; /* Отступ слева */
-    margin-right: 30%;  /*Отступ справа */
-    background: yellow; /* Цвет фона */
-    padding: 10px; /* Поля вокруг текста */
+	
 }

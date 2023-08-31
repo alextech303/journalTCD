@@ -5,6 +5,7 @@ import java.util.List;
 
 import beans.Write;
 import beans.WriteS500;
+import beans.WriteS500_2;
 import dao.DaoProvider;
 import dao.IWriteDao;
 import service.IWriteService;
@@ -69,5 +70,13 @@ public class WriteServiceImpl implements IWriteService{
 	@Override
 	public List<WriteS500> getListWriteS500() throws SQLException {
 		return iwriteServiceDao.getListWriteS500() ;
+	}
+
+
+
+	@Override
+	public List<WriteS500_2> getListWriteS500_2() throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

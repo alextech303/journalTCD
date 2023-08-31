@@ -27,7 +27,7 @@ background-size: 100%;
 <input type="password" name="password" value="" placeholder="Пароль пользователя" /><br/>
 <br/>
 <br/>
-<button type="submit"> <img src="images/login.png" width="20px" height="20px">Войти в учетную запись  </button>
+<button type="submit"> <img src="images/login.png" width="35px" height="35px">Войти в учетную запись  </button>
 
 </form>
 

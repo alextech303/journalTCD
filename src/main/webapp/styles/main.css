@@ -1,7 +1,10 @@
-@charset "UTF-8";
-.centerLayer{
-	margin-left: 30%; /* Отступ слева */
-     /*margin-right: 30%;  Отступ справа */
-     /* background: #fc0;  Цвет фона */
-   /*  padding: 10px;  Поля вокруг текста */
+
+.center{
+	width: 170px;
+	margin-left: auto;
+	margin-right: auto;
+	
 }
+ #24px {
+ font-size: 24px;
+ }

@@ -11,16 +11,10 @@
 <body>
 <h1 align="center">Журнал регистрации показателей проволоки S500</h1>
 
-<c:if test="${requestScope.hello eq 'ok' }">
-<h3>
-<c:out value="Hello !!!"></c:out>
-</h3>
-                  
-</c:if>
 
 <table width="1080px" border="1" align="center" cellspacing="0" > 
 <tr>
-<th>№ п/п</th>
+<th>№ п/п </th>
 <th>Дата </th>
 <th>Наименование арматурной проволоки</th> 
 <th>Номер партии</th>
@@ -43,7 +37,13 @@
 <tr>
 
 <td>
+<form action="frontController"  method="get" >
 <c:out value="${writesS500.id}" default="null"></c:out>
+<input type="hidden" name="getId" value="${writesS500.id}" >
+<input type="hidden" name="command" value = "go_to_23279"/>
+<button  type="submit"> <img src="images/choose.png" width="25px" height="25px" ></button>
+
+</form>
 </td>
 
 <td>
@@ -112,18 +112,6 @@
 </c:forEach>
 
  </table> 
-	
-	
-
-   
-   </br>
-<form action ="frontController" method="get">
-<input type="hidden" name="command" value = "go_to_base_page" />
-<div>
-<button  type="submit"> <img src="images/back.jpg" width="50px" height="50px" > Вернуться к списку журналов    </button> 
-</div>
-
-</form>
-
-</body>
+ </br>
+ </body>
 </html>
