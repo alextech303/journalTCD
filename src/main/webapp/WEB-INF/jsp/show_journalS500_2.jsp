@@ -39,7 +39,8 @@
 <td>
 <form action="frontController"  method="get" >
 <c:out value="${writesS500.id}" default="null"></c:out>
-<input type="hidden" name="getId" value="${writesS500.id}" >
+
+<input type="hidden" name="idS500" value="${writesS500.id}" >
 <input type="hidden" name="command" value = "go_to_23279"/>
 <button  type="submit"> <img src="images/choose.png" width="25px" height="25px" ></button>
 

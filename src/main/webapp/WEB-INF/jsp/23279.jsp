@@ -117,8 +117,15 @@ out.println(localDate.toString());
 </select>
 </td>
 <td>
+<c:if test="${sessionScope.idS500 ne null }">
+	<em>выбрано</em>
+	<input type="hidden" name="wire_idwire" value="${sessionScope.idS500}">
+</c:if>
 
-<a href="frontController?command=show_writes_in_journeys500_2">проволока</a>
+<c:if test="${sessionScope.idS500 eq null }">
+	<a href="frontController?command=show_writes_in_journeys500_2">проволока</a>
+</c:if>
+
 <!--
 <a href="controller?command=go_to_view_news&idnews=${news.idnews}">viewlink	</a>
 

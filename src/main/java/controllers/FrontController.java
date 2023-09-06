@@ -101,7 +101,28 @@ private void loginRequest(HttpServletRequest request,HttpServletResponse respons
 
 
 private void processRequest(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException, NoSuchAlgorithmException, InvalidKeySpecException, SQLException{
+
+	
+	if(request.getParameter("idS500")!=null) {
+				
+		String commandName = request.getParameter("command");
+						
+		Command command = provider.getCommand(commandName);
+		try {
+			command.execute(request, response);
+		} catch (ServletException | IOException	 | NoSuchAlgorithmException | InvalidKeySpecException e ) {
+			e.printStackTrace();
+			response.sendRedirect("controller?command=go_to_error_page");
+		}
+
+	}else {
+		
+	
+	
+	
 	String commandName = request.getParameter("command");
+	
+	
 	
 	Command command = provider.getCommand(commandName);
 	try {
@@ -112,5 +133,7 @@ private void processRequest(HttpServletRequest request,HttpServletResponse respo
 	}
 
 }
-
 }
+}
+
+
