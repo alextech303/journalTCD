@@ -6,6 +6,7 @@ import java.util.List;
 import beans.Write;
 import beans.WriteS500;
 
+
 public interface IWriteDao {
 	
 	List<Write> getListWrite() throws SQLException;  
@@ -17,6 +18,7 @@ public interface IWriteDao {
 	
 	boolean addWriteS500(WriteS500 writeS500) throws SQLException;
 	
+	WriteS500 fetchById(int id) throws SQLException;
 
 
 }

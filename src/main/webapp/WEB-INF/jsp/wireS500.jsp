@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<title>Проволока арматурная класса S500</title>
+<title>Проволока арматурная класса S500!!!</title>
 
 <style>
  body {

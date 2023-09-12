@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 import beans.WriteS500;
-import beans.WriteS500_2;
 import controllers.Command;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -15,25 +14,32 @@ import jakarta.servlet.http.HttpServletResponse;
 import service.IWriteService;
 import service.ServiceProvider;
 
-public class ShowWritesInJourneyS500_2 implements Command {
+public class ShowWritesId implements Command {
+	
 	private final IWriteService iWriteService = ServiceProvider.getInstance().getiWriteService();
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, NoSuchAlgorithmException, InvalidKeySpecException, SQLException {
 		
-		List<WriteS500> listWritesS500;
+		WriteS500 writesS500Id;
+		//String chooseIdS500 = request.getParameter("idS500_2");
+		//System.out.println("request.getParameter(chooseIdS500) = "+chooseIdS500);
+	//	String id = "${sessionScope.idS500}";
+		 int id = Integer.parseInt(request.getParameter("idS500_2"));
+		  
 		
-		listWritesS500 = iWriteService.getListWriteS500();
+		 
+		
+		writesS500Id = iWriteService.getWriteS500Id(id);
 								
-		request.setAttribute("listWritesS500", listWritesS500 );
+		request.setAttribute("writesS500Id", writesS500Id );
 			
-		request.getRequestDispatcher("WEB-INF/jsp/show_journalS500_2.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/jsp/show_journalS500_Id.jsp").forward(request, response);
 	
-			
-			//response.sendRedirect("controller?command=go_to_error_page");
-		
+				
 	}
 
 		
 	}
+
 

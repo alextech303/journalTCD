@@ -16,5 +16,6 @@ public interface IWriteService {
 	boolean save(WriteS500 writeS500) throws SQLException, ServiceException;
 	List<WriteS500> getListWriteS500() throws SQLException;
 	List<WriteS500_2> getListWriteS500_2() throws SQLException;
+	WriteS500 getWriteS500Id(int id) throws SQLException;
 	
 }

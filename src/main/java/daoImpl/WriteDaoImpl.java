@@ -11,6 +11,7 @@ import java.util.List;
 
 import beans.Write;
 import beans.WriteS500;
+
 import dao.IWriteDao;
 import daoPoolConnection.ConnectionPool;
 import daoPoolConnection.ConnectionPoolException;
@@ -182,4 +183,64 @@ public class WriteDaoImpl implements IWriteDao{
 		
 	}
 
+	@Override
+	public WriteS500 fetchById(int id) throws SQLException {
+		Statement st = null;
+		ResultSet rs = null;
+		String date=null;
+		String name=null;
+		String butch_number=null;
+		String nominal_diameter=null;
+		String nominal_square=null;
+		String linear_mass=null;
+		String ovality = null;
+		String carbon_equivalent=null;
+		String ultimate_strength=null;
+		String yield_strength=null;
+		String relation_of_ultStr_to_yieldStr=null;
+		String relative_elongation=null;
+		String height_of_transverse_ribs=null;
+		String rib_thickness=null;
+		String edge_pitch=null;
+		String note=null;
+		try (Connection connect = ConnectionPool.getInstance().takeConnection()) {
+			st=connect.createStatement();
+			StringBuffer stringBuffer = new StringBuffer("SELECT * FROM wire WHERE idwire=");
+			stringBuffer.append(String.valueOf(id));
+			String sql = stringBuffer.toString();
+			st = connect.createStatement();
+			rs = st.executeQuery(sql);
+			
+
+			while (rs.next()) {
+				
+				date = rs.getString(2);
+				name = rs.getString(3);
+				butch_number = rs.getString(4);
+				nominal_diameter=rs.getString(5);
+				nominal_square = rs.getString(6);
+				linear_mass = rs.getString(7);
+				ovality = rs.getString(8);
+				carbon_equivalent = rs.getString(9);
+				ultimate_strength = rs.getString(10);
+				yield_strength = rs.getString(11);
+				relation_of_ultStr_to_yieldStr = rs.getString(12);
+				relative_elongation = rs.getString(13);
+				height_of_transverse_ribs = rs.getString(14);
+				rib_thickness = rs.getString(15);
+				edge_pitch = rs.getString(16);
+				note = rs.getString(17);
+						
+	}
+		} catch (ConnectionPoolException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return new WriteS500(date,name,butch_number,nominal_diameter, nominal_square, linear_mass,
+				ovality, carbon_equivalent,ultimate_strength,yield_strength,relation_of_ultStr_to_yieldStr,relative_elongation,height_of_transverse_ribs,rib_thickness,edge_pitch,note);
+	}
+			
+			
+	
 }

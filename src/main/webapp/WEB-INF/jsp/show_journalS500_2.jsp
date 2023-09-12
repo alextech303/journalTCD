@@ -33,14 +33,14 @@
 <th>Примечание</th>
 
 </tr>
-<c:forEach var="writesS500" items="${requestScope.writesS500}">
+<c:forEach var="listWritesS500" items="${requestScope.listWritesS500}">
 <tr>
 
 <td>
 <form action="frontController"  method="get" >
-<c:out value="${writesS500.id}" default="null"></c:out>
+<c:out value="${listWritesS500.id}" default="null"></c:out>
 
-<input type="hidden" name="idS500" value="${writesS500.id}" >
+<input type="hidden" name="chooseIdS500" value="${listWritesS500.id}">
 <input type="hidden" name="command" value = "go_to_23279"/>
 <button  type="submit"> <img src="images/choose.png" width="25px" height="25px" ></button>
 
@@ -48,65 +48,65 @@
 </td>
 
 <td>
-<c:out value="${writesS500.date}" default="null"></c:out>
+<c:out value="${listWritesS500.date}" default="null"></c:out>
 </td>
 
 <td>
-<c:out value="${writesS500.name}" default="null"></c:out>
+<c:out value="${listWritesS500.name}" default="null"></c:out>
 </td>
 
 <td>
-<c:out value="${writesS500.butch_number}" default="null"></c:out>
+<c:out value="${listWritesS500.butch_number}" default="null"></c:out>
 </td>
 
 <td>
-<c:out value="${writesS500.nominal_diameter}" default="null"></c:out>
+<c:out value="${listWritesS500.nominal_diameter}" default="null"></c:out>
 </td>
 
 <td>
-<c:out value="${writesS500.nominal_square}" default="null"></c:out>
+<c:out value="${listWritesS500.nominal_square}" default="null"></c:out>
 </td>
 
 <td>
-<c:out value="${writesS500.linear_mass}" default="null"></c:out>
+<c:out value="${listWritesS500.linear_mass}" default="null"></c:out>
 </td>
 
 <td>
-<c:out value="${writesS500.ovality}" default="null"></c:out>
+<c:out value="${listWritesS500.ovality}" default="null"></c:out>
 </td>
 
 <td>
-<c:out value="${writesS500.carbon_equivalent}" default="null"></c:out>
+<c:out value="${listWritesS500.carbon_equivalent}" default="null"></c:out>
 </td>
 
 <td>
-<c:out value="${writesS500.ultimate_strength}" default="null"></c:out>
+<c:out value="${listWritesS500.ultimate_strength}" default="null"></c:out>
 </td>
 
 <td>
-<c:out value="${writesS500.yield_strength}" default="null"></c:out>
+<c:out value="${listWritesS500.yield_strength}" default="null"></c:out>
 </td>
 
 <td>
-<c:out value="${writesS500.relation_of_ultStr_to_yieldStr}" default="null"></c:out>
+<c:out value="${listWritesS500.relation_of_ultStr_to_yieldStr}" default="null"></c:out>
 </td>
 
 <td>
-<c:out value="${writesS500.relative_elongation}" default="null"></c:out>
+<c:out value="${listWritesS500.relative_elongation}" default="null"></c:out>
 </td>
 
 <td>
-<c:out value="${writesS500.height_of_transverse_ribs}" default="null"></c:out>
+<c:out value="${listWritesS500.height_of_transverse_ribs}" default="null"></c:out>
 </td>
 
 <td>
-<c:out value="${writesS500.rib_thickness}" default="null"></c:out>
+<c:out value="${listWritesS500.rib_thickness}" default="null"></c:out>
 </td>
 <td>
-<c:out value="${writesS500.edge_pitch}" default="null"></c:out>
+<c:out value="${listWritesS500.edge_pitch}" default="null"></c:out>
 </td>
 <td>
-<c:out value="${writesS500.note}" default="null"></c:out>
+<c:out value="${listWritesS500.note}" default="null"></c:out>
 </td>
 
 </tr>

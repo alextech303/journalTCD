@@ -70,7 +70,7 @@ private void loginRequest(HttpServletRequest request,HttpServletResponse respons
 	String login = request.getParameter("login");
 	String password = request.getParameter("password");
 		
-	if ((login.equals("Bogush") && password.equals("1111")) || (login.equals("otk2") && password.equals("2222")) ){
+	if ((login.equals("Bogush") && password.equals("1111")) || (login.equals("sorokin") && password.equals("1111")) ){
 
 		/*
 		 * RequestDispatcher

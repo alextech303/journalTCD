@@ -117,12 +117,14 @@ out.println(localDate.toString());
 </select>
 </td>
 <td>
-<c:if test="${sessionScope.idS500 ne null }">
+<c:if test="${sessionScope.chooseIdS500 ne null}">
+
 	<em>выбрано</em>
-	<input type="hidden" name="wire_idwire" value="${sessionScope.idS500}">
+	<p>${sessionScope.chooseIdS500}</p>
+	<input type="hidden" name="chooseWireId" value="${sessionScope.chooseIdS500}">
 </c:if>
 
-<c:if test="${sessionScope.idS500 eq null }">
+<c:if test="${sessionScope.chooseIdS500 eq null }">
 	<a href="frontController?command=show_writes_in_journeys500_2">проволока</a>
 </c:if>
 
@@ -149,8 +151,7 @@ out.println(localDate.toString());
 <div align="left">
 <button type="submit"> <img src="images/write.png" width="25px" height="25px" >Сделать запись  </button>
 </div>
-
- </form>
+</form>
  
  <form action="frontController"  method="get" target="_blank">
  <input type="hidden" name="command" value = "show_5_in_journey">

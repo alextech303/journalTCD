@@ -81,11 +81,11 @@ private final IWriteService iWriteService = ServiceProvider.getInstance().getiWr
 		try {
 			
 			if (iWriteService.save(newWriteS500)) {
-				request.getSession(true).setAttribute("otk1", "ok");
-				request.getSession(true).setAttribute("otk2", "ok");
+				//request.getSession(true).setAttribute("otk1", "ok");
+				//request.getSession(true).setAttribute("otk2", "ok");
 				response.sendRedirect("frontController?command=go_to_do_write_page");
 				
-			}else System.out.println("iWriteService.save(newWrite) == false");
+			}//else System.out.println("iWriteService.save(newWrite) == false");
 			
 		
 		} catch (SQLException | ServiceException e) {

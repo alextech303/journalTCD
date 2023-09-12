@@ -11,6 +11,7 @@ import controllerImpl.Go_To_Base_Page;
 import controllerImpl.Go_To_Do_Write_Page;
 import controllerImpl.Go_To_WireS500;
 import controllerImpl.Show5WriteInJourney;
+import controllerImpl.ShowWritesId;
 import controllerImpl.ShowWritesInJourneyS500;
 import controllerImpl.ShowWritesInJourneyS500_2;
 
@@ -29,6 +30,7 @@ public class CommandProvider {
 		commands.put(CommandName.DO_WRITES500, new DoWriteS500());
 		commands.put(CommandName.SHOW_WRITES_IN_JOURNEYS500, new ShowWritesInJourneyS500());
 		commands.put(CommandName.SHOW_WRITES_IN_JOURNEYS500_2, new ShowWritesInJourneyS500_2());
+		commands.put(CommandName.SHOW_JOURNEY_S500_ID, new ShowWritesId());
 	}
 
 	public Command getCommand(String name) {

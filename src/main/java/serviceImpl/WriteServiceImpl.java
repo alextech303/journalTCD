@@ -79,4 +79,12 @@ public class WriteServiceImpl implements IWriteService{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+
+	@Override
+	public WriteS500 getWriteS500Id(int id) throws SQLException {
+		
+		return iwriteServiceDao.fetchById(id);
+	}
 }

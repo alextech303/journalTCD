@@ -9,14 +9,9 @@
 <link rel="stylesheet" type="text/css" href="styles/show.css">
 </head>
 <body>
-<h1 align="center">Журнал регистрации показателей сетки сварной ГОСТ 23279-2012"</h1>
+<h1 align="center">Журнал регистрации показателей сетки сварной ГОСТ 23279-2012</h1>
+       
 
-<c:if test="${requestScope.hello eq 'ok' }">
-<h3>
-<c:out value="Hello !!!"></c:out>
-</h3>
-                  
-</c:if>
 
 <table width="1080px" border="1" align="center" cellspacing="0" > 
 <tr>
@@ -98,7 +93,15 @@
 </td>
 
 <td>
-<c:out value="${writesS500.id}" default="null"></c:out>
+<form action ="frontController" method="get">
+<input type="hidden" name="command" value = "show_journey_s500_id" />
+<input type="hidden" name="idS500_2" value="${writes.wire_idwire}" >
+<div>
+<button  type="submit"> <img src="images/choose.png" width="25px" height="25px" ></button> 
+</div>
+
+</form>
+<!-- <a href="frontController?command=show_journey_s500_id&idS500=${sessionScope.idS500}">link</a> -->
 </td>
 
 <td>

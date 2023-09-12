@@ -33,12 +33,12 @@ public class DoWrite23279 implements Command {
 	private static final String JSP_STRAIGHTFORWARDNESS_PARAM = "straightforwardness";
 	private static final String JSP_DIAGONAL_PARAM = "diagonal";
 	private static final String JSP_IMPACT_PARAM = "impact";
-	private static final String JSP_WIRE_IDWIRE = "wire_idwire";
+	private static final String JSP_WIRE_IDWIRE = "chooseWireId";//name = chooseWireId
 	private static final String JSP_NOTE_PARAM = "note";
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		
 		Write newWrite;
 		 String date;
 		 String name;
@@ -56,7 +56,7 @@ public class DoWrite23279 implements Command {
 		 String straightforwardness;
 		 String diagonal;
 		 String impact;
-		 int wire_idwire;
+		 int chooseWireId;
 		 String note;
 		 
 		date = request.getParameter(JSP_DATE_PARAM);
@@ -72,19 +72,20 @@ public class DoWrite23279 implements Command {
         straightforwardness= request.getParameter(JSP_STRAIGHTFORWARDNESS_PARAM);
         diagonal= request.getParameter(JSP_DIAGONAL_PARAM);
         impact= request.getParameter(JSP_IMPACT_PARAM);
-        wire_idwire = Integer.parseInt(request.getParameter(JSP_WIRE_IDWIRE));
+        System.out.println("chooseIdS500_1 = = "+request.getParameter(JSP_WIRE_IDWIRE));
+        chooseWireId = Integer.parseInt(request.getParameter(JSP_WIRE_IDWIRE));
         note= request.getParameter(JSP_NOTE_PARAM);
-        
+        System.out.println("chooseIdS500_2 = = "+chooseWireId);
         newWrite = new Write(date,name,butch_number,nominal_diameter,size_cell_1,size_cell_2,sediment,card_size,cross_releases,
-        		longitudinal_releases,straightforwardness,diagonal,impact,wire_idwire,note);
+        		longitudinal_releases,straightforwardness,diagonal,impact,chooseWireId,note);
 		try {
 			
 			if (iWriteService.save(newWrite)) {
-				request.getSession(true).setAttribute("otk1", "ok");
-				request.getSession(true).setAttribute("otk2", "ok");
+				//request.getSession(true).setAttribute("otk1", "ok");
+				//request.getSession(true).setAttribute("otk2", "ok");
 				response.sendRedirect("frontController?command=go_to_do_write_page");
 				
-			}else System.out.println("iWriteService.save(newWrite) == false");
+			}//else System.out.println("iWriteService.save(newWrite) == false");
 			
 		
 		} catch (SQLException | ServiceException e) {
